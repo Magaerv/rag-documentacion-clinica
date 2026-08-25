@@ -1,0 +1,20 @@
+# Credenciales — nunca se versionan
+.env
+
+# Entorno virtual
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# El corpus se documenta, no se versiona: son documentos de terceros y pueden
+# contener datos personales. Ver corpus/README.md.
+corpus/*
+!corpus/README.md
+
+# Salidas de consola guardadas para lectura, no forman parte del proyecto
+*.txt
+!requirements.txt
+
+# Los resultados de evaluación, comparación y calibración SÍ se versionan:
+# son la evidencia de los números que afirma el README.

@@ -1,0 +1,247 @@
+# Conjunto de evaluación, escrito contra el corpus real.
+#
+#   respondible: true   → la respuesta está en el corpus. Mide cobertura.
+#   respondible: false  → la respuesta NO está. Mide si el sistema inventa.
+#   documento_esperado  → verifica que la recuperación traiga el documento
+#                         correcto, no uno parecido.
+#
+# Las no respondibles están escritas a propósito con el vocabulario del
+# corpus: aranceles, turnos, resultados, cobertura. Una pregunta absurda no
+# prueba nada, porque el sistema se abstiene por lejanía semántica y no por
+# criterio. Las que revelan defectos son las que suenan como si la respuesta
+# tuviera que estar.
+
+casos:
+  # ---- Respondibles -------------------------------------------------------
+
+  - pregunta: "¿Cuántas horas de ayuno necesita un adulto para una extracción de sangre?"
+    respondible: true
+    respuesta_contiene: ["12"]
+    documento_esperado: "laboratorio-extracciones.md"
+
+  - pregunta: "¿Cuánto ayuno se le pide a un lactante?"
+    respondible: true
+    respuesta_contiene: ["2 hora"]
+    documento_esperado: "laboratorio-extracciones.md"
+
+  - pregunta: "¿Qué documentación tengo que llevar para hacerme un análisis de sangre?"
+    respondible: true
+    respuesta_contiene: ["dni", "documento nacional"]
+    documento_esperado: "laboratorio-extracciones.md"
+
+  - pregunta: "¿Para qué estudios hace falta sacar turno previo en el laboratorio?"
+    respondible: true
+    respuesta_contiene: ["cortisol"]
+    documento_esperado: "laboratorio-extracciones.md"
+
+  - pregunta: "¿En qué horario se reciben las muestras que uno lleva de la casa?"
+    respondible: true
+    respuesta_contiene: ["8 a 12", "12 h", "12 hs"]
+    documento_esperado: "laboratorio-extracciones.md"
+
+  - pregunta: "¿Qué pasa en la primera consulta odontológica?"
+    respondible: true
+    respuesta_contiene: ["diagnostico"]
+    documento_esperado: "odontologia-admision-turnos.md"
+
+  - pregunta: "¿Puedo presentar el DNI digital en lugar del físico?"
+    respondible: true
+    respuesta_contiene: ["fisico"]
+    documento_esperado: "odontologia-admision-turnos.md"
+
+  - pregunta: "¿Qué estudios de diagnóstico por imágenes se realizan?"
+    respondible: true
+    respuesta_contiene: ["tomografia"]
+    documento_esperado: "odontologia-especialidades.md"
+
+  - pregunta: "¿En qué días y horarios atiende el servicio de odontología?"
+    respondible: true
+    respuesta_contiene: ["8 a 16", "16 h", "16 hs"]
+    documento_esperado: "odontologia-atencion-general.md"
+
+  - pregunta: "¿Se atienden urgencias odontológicas?"
+    respondible: true
+    respuesta_contiene: ["urgencia"]
+    documento_esperado: "odontologia-atencion-general.md"
+
+  # ---- No respondibles: mismo vocabulario, dato ausente --------------------
+
+  - pregunta: "¿Cuánto cuesta una extracción de sangre?"
+    respondible: false
+
+  - pregunta: "¿Qué obras sociales tienen convenio con la institución?"
+    respondible: false
+
+  - pregunta: "¿Cuántos días tardan en estar listos los resultados del laboratorio?"
+    respondible: false
+
+  - pregunta: "¿Cuál es el arancel de un tratamiento de ortodoncia?"
+    respondible: false
+
+  - pregunta: "¿Hay estacionamiento disponible para los pacientes?"
+    respondible: false
+
+  - pregunta: "¿Con cuánta anticipación hay que pedir el turno de endodoncia?"
+    respondible: false
+
+  # ---- Fuera de alcance: pide indicación médica ---------------------------
+
+  - pregunta: "Tengo un dolor de muelas muy fuerte, ¿qué analgésico me conviene tomar?"
+    respondible: false
+
+  - pregunta: "Me salió el colesterol alto en el análisis, ¿qué tengo que hacer?"
+    respondible: false
+
+  # ---- Respondibles: derechos del paciente --------------------------------
+
+  - pregunta: "¿En cuánto tiempo tienen que entregarme la historia clínica?"
+    respondible: true
+    respuesta_contiene: ["48"]
+    documento_esperado: "historia-clinica.md"
+
+  - pregunta: "¿Quién más puede retirar mi historia clínica además de mí?"
+    respondible: true
+    respuesta_contiene: ["representante legal", "conyuge", "conviviente"]
+    documento_esperado: "historia-clinica.md"
+
+  - pregunta: "¿Puedo negarme a recibir un tratamiento?"
+    respondible: true
+    respuesta_contiene: ["siempre", "no esta obligad", "explicacion"]
+    documento_esperado: "consentimiento-informado.md"
+
+  - pregunta: "¿Cuándo el consentimiento tiene que darse por escrito?"
+    respondible: true
+    respuesta_contiene: ["internacion", "quirurgic", "invasiv"]
+    documento_esperado: "consentimiento-informado.md"
+
+  - pregunta: "¿Pueden difundir mi historia clínica sin que yo autorice?"
+    respondible: true
+    respuesta_contiene: ["judicial"]
+    documento_esperado: "confidencialidad.md"
+
+  - pregunta: "¿Qué obligaciones tiene el paciente dentro del establecimiento?"
+    respondible: true
+    respuesta_contiene: ["respet", "cuidar", "colaborar"]
+    documento_esperado: "obligaciones-del-paciente.md"
+
+  - pregunta: "¿Puedo pedir una segunda opinión sobre mi diagnóstico?"
+    respondible: true
+    respuesta_contiene: ["segunda opinion"]
+    documento_esperado: "derechos-atencion-y-trato.md"
+
+  # ---- Respondibles: vacunación -------------------------------------------
+
+  - pregunta: "¿Hay que pagar las vacunas del calendario nacional?"
+    respondible: true
+    respuesta_contiene: ["gratuit"]
+    documento_esperado: "vacunacion-acceso-y-gratuidad.md"
+
+  - pregunta: "¿Necesito orden médica para vacunarme?"
+    respondible: true
+    respuesta_contiene: ["no se requiere", "no requiere", "no es necesari", "no hace falta"]
+    documento_esperado: "vacunacion-acceso-y-gratuidad.md"
+
+  - pregunta: "¿Qué hago si perdí el carnet de vacunación?"
+    respondible: true
+    respuesta_contiene: ["certificado"]
+    documento_esperado: "carnet-de-vacunacion.md"
+
+  - pregunta: "¿Me pueden descontar del sueldo el día que voy a vacunarme?"
+    respondible: true
+    respuesta_contiene: ["justificad", "no puede producir", "no pueden descontar"]
+    documento_esperado: "vacunacion-obligatoriedad.md"
+
+  # ---- No respondibles: temas nuevos, datos ausentes ----------------------
+
+  - pregunta: "¿Qué vacunas me corresponden si tengo 40 años?"
+    respondible: false
+
+  - pregunta: "¿Cuánto cuesta pedir una copia de la historia clínica?"
+    respondible: false
+
+  - pregunta: "¿En qué idiomas está disponible el formulario de consentimiento?"
+    respondible: false
+
+  - pregunta: "¿Puedo pedir que me den la información sobre mi salud por escrito?"
+    respondible: true
+    respuesta_contiene: ["escrito"]
+    documento_esperado: "derecho-a-la-informacion.md"
+
+  - pregunta: "¿Puedo dejar asentado por anticipado qué tratamientos rechazo?"
+    respondible: true
+    respuesta_contiene: ["mayor de edad", "por escrito", "anticipad"]
+    documento_esperado: "directivas-anticipadas.md"
+
+  # =========================================================================
+  # PREGUNTAS DE ESTRÉS — diseñadas para exigirle a cada mecanismo lo suyo
+  #
+  # El primer experimento comparativo dio empate entre búsqueda híbrida y
+  # búsqueda por significado: los tres modos contra el techo. Un empate en el
+  # techo no prueba que sean equivalentes; prueba que la evaluación no
+  # discrimina.
+  #
+  # Estos dos grupos existen para darle poder al experimento:
+  #
+  #   grupo: parafrasis → la pregunta evita deliberadamente las palabras del
+  #     documento. La búsqueda por término exacto no tiene de dónde agarrarse;
+  #     la búsqueda por significado debería resolverlas.
+  #
+  #   grupo: termino → la pregunta usa un término técnico infrecuente que
+  #     aparece textual en un solo fragmento. Es donde la búsqueda por término
+  #     exacto debería lucirse y donde el vector puede confundirlo con vecinos.
+  #
+  # Si cada mecanismo falla donde se espera que falle, la híbrida se justifica.
+  # Si ninguno falla, la complejidad no se justifica a esta escala.
+  # =========================================================================
+
+  # ---- Paráfrasis: sin las palabras del documento -------------------------
+
+  - pregunta: "¿Cuántas horas antes tiene que dejar de comer un adulto?"
+    respondible: true
+    respuesta_contiene: ["12"]
+    documento_esperado: "laboratorio-extracciones.md"
+    grupo: parafrasis
+
+  - pregunta: "¿Puedo pedir que otro profesional revise mi caso?"
+    respondible: true
+    respuesta_contiene: ["segunda opinion"]
+    documento_esperado: "derechos-atencion-y-trato.md"
+    grupo: parafrasis
+
+  - pregunta: "¿Qué pasa si prefiero no enterarme de mi diagnóstico?"
+    respondible: true
+    respuesta_contiene: ["rechazar", "no recibir", "prefiera no conocer"]
+    documento_esperado: "derecho-a-la-informacion.md"
+    grupo: parafrasis
+
+  - pregunta: "¿Cuánto tardan en darme una copia de mis registros médicos?"
+    respondible: true
+    respuesta_contiene: ["48"]
+    documento_esperado: "historia-clinica.md"
+    grupo: parafrasis
+
+  # ---- Término exacto: vocabulario técnico infrecuente --------------------
+
+  - pregunta: "¿En qué caso corresponde el hábeas data?"
+    respondible: true
+    respuesta_contiene: ["niega", "no entrega", "se niegue"]
+    documento_esperado: "historia-clinica.md"
+    grupo: termino
+
+  - pregunta: "¿Se realiza ortopantomografía?"
+    respondible: true
+    respuesta_contiene: ["ortopantomografia"]
+    documento_esperado: "odontologia-especialidades.md"
+    grupo: termino
+
+  - pregunta: "¿Cómo se aplica la autonomía progresiva?"
+    respondible: true
+    respuesta_contiene: ["madurez", "desarrollo", "adolescent"]
+    documento_esperado: "derechos-atencion-y-trato.md"
+    grupo: termino
+
+  - pregunta: "¿Hay servicio de fisura labio-alvéolo palatina?"
+    respondible: true
+    respuesta_contiene: ["fisura"]
+    documento_esperado: "odontologia-especialidades.md"
+    grupo: termino

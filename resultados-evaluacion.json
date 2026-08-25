@@ -1,0 +1,784 @@
+{
+  "resumen": {
+    "total": 42,
+    "cobertura_respondibles_%": 100.0,
+    "abstencion_correcta_%": 100.0,
+    "citaron_fuente_%": 100.0,
+    "acerto_el_dato_%": 100.0,
+    "recupero_documento_esperado_%": 100.0,
+    "abstenciones_sin_invocar_modelo": 3
+  },
+  "detalle": [
+    {
+      "pregunta": "¿Cuántas horas de ayuno necesita un adulto para una extracción de sangre?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "laboratorio-extracciones.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "12 horas de ayuno. [laboratorio-extracciones.md · Ayuno requerido]",
+      "fuentes": [
+        "laboratorio-extracciones.md · Ayuno requerido",
+        "laboratorio-extracciones.md · Horario de extracción de sangre",
+        "laboratorio-extracciones.md · Estudios que requieren turno previo",
+        "laboratorio-extracciones.md · Recepción de muestras",
+        "laboratorio-extracciones.md · Documentación a presentar"
+      ]
+    },
+    {
+      "pregunta": "¿Cuánto ayuno se le pide a un lactante?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "laboratorio-extracciones.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "A un lactante se le piden 2 horas de ayuno. [laboratorio-extracciones.md · Ayuno requerido]",
+      "fuentes": [
+        "laboratorio-extracciones.md · Ayuno requerido"
+      ]
+    },
+    {
+      "pregunta": "¿Qué documentación tengo que llevar para hacerme un análisis de sangre?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "laboratorio-extracciones.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Para ser atendido, el paciente debe presentar orden médica completa y Documento Nacional de Identidad. [laboratorio-extracciones.md · Documentación a presentar]",
+      "fuentes": [
+        "laboratorio-extracciones.md · Documentación a presentar",
+        "laboratorio-extracciones.md · Estudios especiales disponibles",
+        "laboratorio-extracciones.md · Estudios que requieren turno previo",
+        "laboratorio-extracciones.md · Horario de extracción de sangre",
+        "laboratorio-extracciones.md · Ayuno requerido"
+      ]
+    },
+    {
+      "pregunta": "¿Para qué estudios hace falta sacar turno previo en el laboratorio?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "laboratorio-extracciones.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Sí requieren turno previo los siguientes estudios: cortisol, curva de tolerancia a la glucosa, test del sudor, espermogramas y estudios micológicos. [laboratorio-extracciones.md · Estudios que requieren turno previo]",
+      "fuentes": [
+        "laboratorio-extracciones.md · Estudios que requieren turno previo",
+        "laboratorio-extracciones.md · Horario de extracción de sangre",
+        "laboratorio-extracciones.md · Documentación a presentar",
+        "laboratorio-extracciones.md · Recepción de muestras",
+        "laboratorio-extracciones.md · Ayuno requerido"
+      ]
+    },
+    {
+      "pregunta": "¿En qué horario se reciben las muestras que uno lleva de la casa?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "laboratorio-extracciones.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Las muestras que el paciente trae de su domicilio se reciben de 8 a 12 horas. [laboratorio-extracciones.md · Recepción de muestras]",
+      "fuentes": [
+        "laboratorio-extracciones.md · Recepción de muestras",
+        "laboratorio-extracciones.md · Horario de extracción de sangre",
+        "laboratorio-extracciones.md · Entrega de resultados",
+        "laboratorio-extracciones.md · Estudios que requieren turno previo",
+        "laboratorio-extracciones.md · Estudios especiales disponibles"
+      ]
+    },
+    {
+      "pregunta": "¿Qué pasa en la primera consulta odontológica?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "odontologia-admision-turnos.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "La primera consulta se destina al diagnóstico. A partir de ese diagnóstico se otorga un turno para la atención posterior en la especialidad o servicio que corresponda. [odontologia-admision-turnos.md · Primera consulta]\n\nLos pacientes nuevos son atendidos en el Departamento de Admisión, donde se abre la historia clínica, se realiza el diagnóstico y se define la derivación correspondiente. [odontologia-admision-turnos.md · Primera consulta]",
+      "fuentes": [
+        "odontologia-admision-turnos.md · Primera consulta",
+        "odontologia-admision-turnos.md · Resultados de estudios",
+        "odontologia-admision-turnos.md · Documentación obligatoria",
+        "odontologia-atencion-general.md · Cómo obtener un turno",
+        "odontologia-admision-turnos.md · Aranceles"
+      ]
+    },
+    {
+      "pregunta": "¿Puedo presentar el DNI digital en lugar del físico?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "odontologia-admision-turnos.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "No. En odontología se indica que el paciente debe presentarse con el DNI físico y que no se admite constancia digital ni fotografía del documento. [odontologia-admision-turnos.md · Documentación obligatoria]",
+      "fuentes": [
+        "odontologia-admision-turnos.md · Documentación obligatoria",
+        "carnet-de-vacunacion.md · Registro digital",
+        "laboratorio-extracciones.md · Documentación a presentar",
+        "carnet-de-vacunacion.md · Si se pierde el carnet",
+        "carnet-de-vacunacion.md · Qué es"
+      ]
+    },
+    {
+      "pregunta": "¿Qué estudios de diagnóstico por imágenes se realizan?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "odontologia-especialidades.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "El servicio de diagnóstico por imágenes realiza tomografía y ortopantomografía. [odontologia-especialidades.md · Diagnóstico por imágenes]",
+      "fuentes": [
+        "odontologia-especialidades.md · Diagnóstico por imágenes",
+        "odontologia-admision-turnos.md · Resultados de estudios",
+        "laboratorio-extracciones.md · Estudios especiales disponibles",
+        "odontologia-admision-turnos.md · Primera consulta"
+      ]
+    },
+    {
+      "pregunta": "¿En qué días y horarios atiende el servicio de odontología?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "odontologia-atencion-general.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "La atención se brinda de lunes a sábados, de 8 a 16 horas. [odontologia-atencion-general.md · Días y horarios de atención]",
+      "fuentes": [
+        "odontologia-atencion-general.md · Días y horarios de atención",
+        "odontologia-atencion-general.md · Urgencias",
+        "odontologia-atencion-general.md · Cómo obtener un turno",
+        "odontologia-atencion-general.md · A quiénes atiende",
+        "odontologia-atencion-general.md · Equipo profesional"
+      ]
+    },
+    {
+      "pregunta": "¿Se atienden urgencias odontológicas?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "odontologia-atencion-general.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Sí, el servicio atiende urgencias odontológicas dentro de los mismos días y horarios de atención general. [odontologia-atencion-general.md · Urgencias]",
+      "fuentes": [
+        "odontologia-atencion-general.md · Urgencias",
+        "odontologia-atencion-general.md · Días y horarios de atención",
+        "odontologia-atencion-general.md · A quiénes atiende",
+        "odontologia-atencion-general.md · Cómo obtener un turno",
+        "odontologia-atencion-general.md · Equipo profesional"
+      ]
+    },
+    {
+      "pregunta": "¿Cuánto cuesta una extracción de sangre?",
+      "respondible": false,
+      "se_abstuvo": true,
+      "cito_fuente": false,
+      "consulto_modelo": true,
+      "documento_esperado": null,
+      "recupero_esperado": null,
+      "acerto_el_dato": null,
+      "correcto": true,
+      "respuesta": "No tengo esa información en la documentación disponible.",
+      "fuentes": [
+        "laboratorio-extracciones.md · Horario de extracción de sangre",
+        "laboratorio-extracciones.md · Estudios que requieren turno previo",
+        "laboratorio-extracciones.md · Documentación a presentar",
+        "laboratorio-extracciones.md · Estudios especiales disponibles",
+        "laboratorio-extracciones.md · Recepción de muestras"
+      ]
+    },
+    {
+      "pregunta": "¿Qué obras sociales tienen convenio con la institución?",
+      "respondible": false,
+      "se_abstuvo": true,
+      "cito_fuente": false,
+      "consulto_modelo": false,
+      "documento_esperado": null,
+      "recupero_esperado": null,
+      "acerto_el_dato": null,
+      "correcto": true,
+      "respuesta": "No tengo esa información en la documentación disponible.",
+      "fuentes": []
+    },
+    {
+      "pregunta": "¿Cuántos días tardan en estar listos los resultados del laboratorio?",
+      "respondible": false,
+      "se_abstuvo": true,
+      "cito_fuente": false,
+      "consulto_modelo": true,
+      "documento_esperado": null,
+      "recupero_esperado": null,
+      "acerto_el_dato": null,
+      "correcto": true,
+      "respuesta": "No tengo esa información en la documentación disponible.",
+      "fuentes": [
+        "laboratorio-extracciones.md · Entrega de resultados",
+        "laboratorio-extracciones.md · Recepción de muestras",
+        "laboratorio-extracciones.md · Estudios que requieren turno previo",
+        "laboratorio-extracciones.md · Ayuno requerido",
+        "laboratorio-extracciones.md · Estudios especiales disponibles"
+      ]
+    },
+    {
+      "pregunta": "¿Cuál es el arancel de un tratamiento de ortodoncia?",
+      "respondible": false,
+      "se_abstuvo": true,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": null,
+      "recupero_esperado": null,
+      "acerto_el_dato": null,
+      "correcto": true,
+      "respuesta": "La documentación solo indica que **la atención es arancelada**, pero **no especifica el arancel de un tratamiento de ortodoncia**. [odontologia-admision-turnos.md · Aranceles]",
+      "fuentes": [
+        "odontologia-admision-turnos.md · Aranceles",
+        "odontologia-atencion-general.md · Días y horarios de atención",
+        "odontologia-atencion-general.md · Cómo obtener un turno",
+        "odontologia-atencion-general.md · Urgencias",
+        "odontologia-especialidades.md · Servicios especializados"
+      ]
+    },
+    {
+      "pregunta": "¿Hay estacionamiento disponible para los pacientes?",
+      "respondible": false,
+      "se_abstuvo": true,
+      "cito_fuente": false,
+      "consulto_modelo": true,
+      "documento_esperado": null,
+      "recupero_esperado": null,
+      "acerto_el_dato": null,
+      "correcto": true,
+      "respuesta": "No tengo esa información en la documentación disponible.",
+      "fuentes": [
+        "obligaciones-del-paciente.md · Cuidado de las instalaciones",
+        "obligaciones-del-paciente.md · Trato hacia el personal y otros pacientes",
+        "odontologia-atencion-general.md · Cómo obtener un turno",
+        "derechos-atencion-y-trato.md · Trato digno y respetuoso",
+        "laboratorio-extracciones.md · Estudios que requieren turno previo"
+      ]
+    },
+    {
+      "pregunta": "¿Con cuánta anticipación hay que pedir el turno de endodoncia?",
+      "respondible": false,
+      "se_abstuvo": true,
+      "cito_fuente": false,
+      "consulto_modelo": true,
+      "documento_esperado": null,
+      "recupero_esperado": null,
+      "acerto_el_dato": null,
+      "correcto": true,
+      "respuesta": "No tengo esa información en la documentación disponible.",
+      "fuentes": [
+        "odontologia-atencion-general.md · Cómo obtener un turno",
+        "odontologia-admision-turnos.md · Primera consulta",
+        "odontologia-admision-turnos.md · Solicitud de turnos",
+        "odontologia-admision-turnos.md · Documentación obligatoria",
+        "odontologia-atencion-general.md · Urgencias"
+      ]
+    },
+    {
+      "pregunta": "Tengo un dolor de muelas muy fuerte, ¿qué analgésico me conviene tomar?",
+      "respondible": false,
+      "se_abstuvo": true,
+      "cito_fuente": false,
+      "consulto_modelo": false,
+      "documento_esperado": null,
+      "recupero_esperado": null,
+      "acerto_el_dato": null,
+      "correcto": true,
+      "respuesta": "No tengo esa información en la documentación disponible.",
+      "fuentes": []
+    },
+    {
+      "pregunta": "Me salió el colesterol alto en el análisis, ¿qué tengo que hacer?",
+      "respondible": false,
+      "se_abstuvo": true,
+      "cito_fuente": false,
+      "consulto_modelo": false,
+      "documento_esperado": null,
+      "recupero_esperado": null,
+      "acerto_el_dato": null,
+      "correcto": true,
+      "respuesta": "No tengo esa información en la documentación disponible.",
+      "fuentes": []
+    },
+    {
+      "pregunta": "¿En cuánto tiempo tienen que entregarme la historia clínica?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "historia-clinica.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "La copia debe entregarse dentro de las 48 horas de solicitada. En situaciones de emergencia el plazo debe ser menor. [historia-clinica.md · Plazo de entrega]",
+      "fuentes": [
+        "historia-clinica.md · Plazo de entrega",
+        "historia-clinica.md · Cómo se solicita",
+        "historia-clinica.md · Qué es",
+        "historia-clinica.md · Si la institución no la entrega",
+        "historia-clinica.md · Quiénes pueden retirarla"
+      ]
+    },
+    {
+      "pregunta": "¿Quién más puede retirar mi historia clínica además de mí?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "historia-clinica.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Además del propio paciente, pueden retirar la historia clínica el cónyuge o la persona conviviente, el representante legal y los profesionales de la salud expresamente autorizados por el paciente. [historia-clinica.md · Quiénes pueden retirarla]",
+      "fuentes": [
+        "historia-clinica.md · Quiénes pueden retirarla",
+        "historia-clinica.md · Si la institución no la entrega",
+        "historia-clinica.md · Cómo se solicita",
+        "confidencialidad.md · Cuándo puede divulgarse",
+        "obligaciones-del-paciente.md · Firma de documentación"
+      ]
+    },
+    {
+      "pregunta": "¿Puedo negarme a recibir un tratamiento?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "consentimiento-informado.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Sí. El paciente siempre puede negarse a recibir un tratamiento médico y no está obligado a dar explicaciones sobre su decisión. [consentimiento-informado.md · Derecho a rechazar un tratamiento]",
+      "fuentes": [
+        "consentimiento-informado.md · Derecho a rechazar un tratamiento",
+        "directivas-anticipadas.md · Rechazo de tratamientos en enfermedad terminal",
+        "derecho-a-la-informacion.md · Derecho a no ser informado",
+        "directivas-anticipadas.md · Directivas anticipadas",
+        "obligaciones-del-paciente.md · Colaboración con el tratamiento"
+      ]
+    },
+    {
+      "pregunta": "¿Cuándo el consentimiento tiene que darse por escrito?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "consentimiento-informado.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Sí debe otorgarse por escrito en los siguientes casos: intervenciones quirúrgicas, internación, procedimientos diagnósticos o terapéuticos invasivos, y tratamientos que impliquen riesgos. [consentimiento-informado.md · Cuándo debe darse por escrito]",
+      "fuentes": [
+        "consentimiento-informado.md · Cuándo debe darse por escrito",
+        "consentimiento-informado.md · Excepciones",
+        "consentimiento-informado.md · Qué es",
+        "derecho-a-la-informacion.md · Información por escrito",
+        "consentimiento-informado.md · Derecho a rechazar un tratamiento"
+      ]
+    },
+    {
+      "pregunta": "¿Pueden difundir mi historia clínica sin que yo autorice?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "confidencialidad.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "No. La información de salud del paciente solo puede darse a conocer con autorización expresa del propio paciente o por orden judicial; fuera de esos casos, ni los profesionales ni la institución pueden difundir la historia clínica ni brindar información sobre la salud del paciente. [confidencialidad.md · Cuándo puede divulgarse]",
+      "fuentes": [
+        "confidencialidad.md · Cuándo puede divulgarse",
+        "historia-clinica.md · Cómo se solicita",
+        "historia-clinica.md · Si la institución no la entrega",
+        "historia-clinica.md · Quiénes pueden retirarla",
+        "confidencialidad.md · Reserva de la información"
+      ]
+    },
+    {
+      "pregunta": "¿Qué obligaciones tiene el paciente dentro del establecimiento?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "obligaciones-del-paciente.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "El paciente debe cuidar las instalaciones, los materiales y los equipos médicos puestos a su disposición. [obligaciones-del-paciente.md · Cuidado de las instalaciones]\n\nDebe tratar con respeto a los trabajadores del establecimiento y a los demás pacientes y acompañantes. [obligaciones-del-paciente.md · Trato hacia el personal y otros pacientes]\n\nDebe colaborar con las indicaciones diagnósticas y terapéuticas que haya consentido previamente. [obligaciones-del-paciente.md · Colaboración con el tratamiento]\n\nDebe proporcionar información veraz sobre sus datos personales y sobre su estado de salud. [obligaciones-del-paciente.md · Información veraz]\n\nDebe firmar la historia clínica. Cuando rechaza las indicaciones profesionales y decide retirarse, debe firmar el alta voluntaria. [obligaciones-del-paciente.md · Firma de documentación]",
+      "fuentes": [
+        "obligaciones-del-paciente.md · Cuidado de las instalaciones",
+        "obligaciones-del-paciente.md · Trato hacia el personal y otros pacientes",
+        "obligaciones-del-paciente.md · Colaboración con el tratamiento",
+        "obligaciones-del-paciente.md · Información veraz",
+        "obligaciones-del-paciente.md · Firma de documentación"
+      ]
+    },
+    {
+      "pregunta": "¿Puedo pedir una segunda opinión sobre mi diagnóstico?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "derechos-atencion-y-trato.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Sí. El paciente tiene derecho a obtener por escrito la información necesaria para solicitar una segunda opinión sobre su diagnóstico, su pronóstico o su tratamiento. [derechos-atencion-y-trato.md · Interconsulta y segunda opinión]\n\nAdemás, el paciente puede solicitar que esa información se le entregue por escrito. [derecho-a-la-informacion.md · Información por escrito]",
+      "fuentes": [
+        "derechos-atencion-y-trato.md · Interconsulta y segunda opinión",
+        "odontologia-admision-turnos.md · Primera consulta",
+        "obligaciones-del-paciente.md · Colaboración con el tratamiento",
+        "derecho-a-la-informacion.md · Información por escrito",
+        "odontologia-especialidades.md · Diagnóstico por imágenes"
+      ]
+    },
+    {
+      "pregunta": "¿Hay que pagar las vacunas del calendario nacional?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "vacunacion-acceso-y-gratuidad.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Las vacunas del Calendario Nacional de Vacunación son gratuitas y no puede cobrarse ningún importe por la dosis, la aplicación, los elementos descartables, el carnet unificado ni el trabajo del profesional que la aplica. [vacunacion-acceso-y-gratuidad.md · Gratuidad]",
+      "fuentes": [
+        "vacunacion-acceso-y-gratuidad.md · Gratuidad",
+        "vacunacion-obligatoriedad.md · Alcance de la obligación",
+        "vacunacion-acceso-y-gratuidad.md · Orden médica",
+        "carnet-de-vacunacion.md · Registro digital",
+        "carnet-de-vacunacion.md · Qué es"
+      ]
+    },
+    {
+      "pregunta": "¿Necesito orden médica para vacunarme?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "vacunacion-acceso-y-gratuidad.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "No se requiere orden médica para recibir las vacunas del calendario. [vacunacion-acceso-y-gratuidad.md · Orden médica]",
+      "fuentes": [
+        "vacunacion-acceso-y-gratuidad.md · Orden médica",
+        "vacunacion-obligatoriedad.md · Alcance de la obligación",
+        "carnet-de-vacunacion.md · Qué es",
+        "carnet-de-vacunacion.md · Si no se tiene el carnet al momento de vacunarse",
+        "vacunacion-acceso-y-gratuidad.md · Dónde vacunarse"
+      ]
+    },
+    {
+      "pregunta": "¿Qué hago si perdí el carnet de vacunación?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "carnet-de-vacunacion.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "La persona puede solicitar un certificado de vacunación en establecimientos públicos o privados, que sirve como comprobante del cumplimiento del calendario. [carnet-de-vacunacion.md · Si se pierde el carnet]",
+      "fuentes": [
+        "carnet-de-vacunacion.md · Si se pierde el carnet",
+        "carnet-de-vacunacion.md · Qué es",
+        "carnet-de-vacunacion.md · Si no se tiene el carnet al momento de vacunarse",
+        "vacunacion-acceso-y-gratuidad.md · Si no se aplica la vacuna",
+        "carnet-de-vacunacion.md · El carnet no puede exigirse como condición"
+      ]
+    },
+    {
+      "pregunta": "¿Me pueden descontar del sueldo el día que voy a vacunarme?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "vacunacion-obligatoriedad.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "No. La inasistencia al trabajo el día en que la persona se vacuna está justificada y en ningún caso puede producir pérdida ni disminución de sueldos, salarios o premios. [vacunacion-obligatoriedad.md · Ausencia laboral el día de la vacunación]",
+      "fuentes": [
+        "vacunacion-obligatoriedad.md · Ausencia laboral el día de la vacunación",
+        "vacunacion-acceso-y-gratuidad.md · Gratuidad",
+        "vacunacion-obligatoriedad.md · Personal de salud",
+        "vacunacion-acceso-y-gratuidad.md · Si no se aplica la vacuna",
+        "vacunacion-acceso-y-gratuidad.md · Orden médica"
+      ]
+    },
+    {
+      "pregunta": "¿Qué vacunas me corresponden si tengo 40 años?",
+      "respondible": false,
+      "se_abstuvo": true,
+      "cito_fuente": false,
+      "consulto_modelo": true,
+      "documento_esperado": null,
+      "recupero_esperado": null,
+      "acerto_el_dato": null,
+      "correcto": true,
+      "respuesta": "No tengo esa información en la documentación disponible.",
+      "fuentes": [
+        "vacunacion-obligatoriedad.md · Alcance de la obligación",
+        "vacunacion-acceso-y-gratuidad.md · Orden médica",
+        "vacunacion-acceso-y-gratuidad.md · Gratuidad",
+        "vacunacion-acceso-y-gratuidad.md · Dónde vacunarse",
+        "carnet-de-vacunacion.md · Si no se tiene el carnet al momento de vacunarse"
+      ]
+    },
+    {
+      "pregunta": "¿Cuánto cuesta pedir una copia de la historia clínica?",
+      "respondible": false,
+      "se_abstuvo": true,
+      "cito_fuente": false,
+      "consulto_modelo": true,
+      "documento_esperado": null,
+      "recupero_esperado": null,
+      "acerto_el_dato": null,
+      "correcto": true,
+      "respuesta": "No tengo esa información en la documentación disponible.",
+      "fuentes": [
+        "historia-clinica.md · Cómo se solicita",
+        "historia-clinica.md · Qué es",
+        "historia-clinica.md · Plazo de entrega",
+        "historia-clinica.md · Si la institución no la entrega",
+        "historia-clinica.md · Quiénes pueden retirarla"
+      ]
+    },
+    {
+      "pregunta": "¿En qué idiomas está disponible el formulario de consentimiento?",
+      "respondible": false,
+      "se_abstuvo": true,
+      "cito_fuente": false,
+      "consulto_modelo": true,
+      "documento_esperado": null,
+      "recupero_esperado": null,
+      "acerto_el_dato": null,
+      "correcto": true,
+      "respuesta": "No tengo esa información en la documentación disponible.",
+      "fuentes": [
+        "consentimiento-informado.md · Cuándo debe darse por escrito",
+        "consentimiento-informado.md · Qué es",
+        "consentimiento-informado.md · Derecho a rechazar un tratamiento",
+        "consentimiento-informado.md · Excepciones",
+        "derecho-a-la-informacion.md · Información por escrito"
+      ]
+    },
+    {
+      "pregunta": "¿Puedo pedir que me den la información sobre mi salud por escrito?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "derecho-a-la-informacion.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Sí, el paciente puede solicitar que esa información se le entregue por escrito. [derecho-a-la-informacion.md · Información por escrito]\n\nAdemás, el paciente tiene derecho a obtener por escrito la información necesaria para solicitar una segunda opinión sobre su diagnóstico, su pronóstico o su tratamiento. [derechos-atencion-y-trato.md · Interconsulta y segunda opinión]",
+      "fuentes": [
+        "derecho-a-la-informacion.md · Información por escrito",
+        "derechos-atencion-y-trato.md · Interconsulta y segunda opinión",
+        "historia-clinica.md · Cómo se solicita",
+        "confidencialidad.md · Cuándo puede divulgarse",
+        "obligaciones-del-paciente.md · Información veraz"
+      ]
+    },
+    {
+      "pregunta": "¿Puedo dejar asentado por anticipado qué tratamientos rechazo?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "directivas-anticipadas.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Sí. Toda persona mayor de edad puede dejar asentado por escrito qué tratamientos médicos, preventivos o paliativos acepta y cuáles rechaza, para el caso de no poder expresar su voluntad en el futuro. [directivas-anticipadas.md · Directivas anticipadas]\n\nEl paciente puede modificar esa decisión en cualquier momento. [directivas-anticipadas.md · Directivas anticipadas]",
+      "fuentes": [
+        "directivas-anticipadas.md · Rechazo de tratamientos en enfermedad terminal",
+        "consentimiento-informado.md · Derecho a rechazar un tratamiento",
+        "directivas-anticipadas.md · Directivas anticipadas",
+        "derecho-a-la-informacion.md · Derecho a no ser informado",
+        "consentimiento-informado.md · Qué es"
+      ]
+    },
+    {
+      "pregunta": "¿Cuántas horas antes tiene que dejar de comer un adulto?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "laboratorio-extracciones.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Un adulto debe realizar **12 horas de ayuno**. [laboratorio-extracciones.md · Ayuno requerido]",
+      "fuentes": [
+        "laboratorio-extracciones.md · Ayuno requerido",
+        "directivas-anticipadas.md · Directivas anticipadas"
+      ]
+    },
+    {
+      "pregunta": "¿Puedo pedir que otro profesional revise mi caso?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "derechos-atencion-y-trato.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Sí. El paciente tiene derecho a obtener por escrito la información necesaria para solicitar una segunda opinión sobre su diagnóstico, su pronóstico o su tratamiento. [derechos-atencion-y-trato.md · Interconsulta y segunda opinión]",
+      "fuentes": [
+        "derechos-atencion-y-trato.md · Interconsulta y segunda opinión",
+        "odontologia-atencion-general.md · Cómo obtener un turno",
+        "derechos-atencion-y-trato.md · Derecho a ser asistido",
+        "historia-clinica.md · Quiénes pueden retirarla",
+        "derecho-a-la-informacion.md · Información por escrito"
+      ]
+    },
+    {
+      "pregunta": "¿Qué pasa si prefiero no enterarme de mi diagnóstico?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "derecho-a-la-informacion.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "El paciente puede rechazar recibir información que prefiera no conocer, y ese rechazo debe respetarse y dejarse asentado. [derecho-a-la-informacion.md · Derecho a no ser informado]",
+      "fuentes": [
+        "derecho-a-la-informacion.md · Derecho a no ser informado",
+        "consentimiento-informado.md · Derecho a rechazar un tratamiento",
+        "consentimiento-informado.md · Qué es",
+        "derechos-atencion-y-trato.md · Interconsulta y segunda opinión",
+        "obligaciones-del-paciente.md · Colaboración con el tratamiento"
+      ]
+    },
+    {
+      "pregunta": "¿Cuánto tardan en darme una copia de mis registros médicos?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "historia-clinica.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "La copia debe entregarse dentro de las 48 horas de solicitada. En situaciones de emergencia el plazo debe ser menor. [historia-clinica.md · Plazo de entrega]",
+      "fuentes": [
+        "historia-clinica.md · Plazo de entrega",
+        "derecho-a-la-informacion.md · Información por escrito",
+        "historia-clinica.md · Si la institución no la entrega",
+        "laboratorio-extracciones.md · Entrega de resultados",
+        "historia-clinica.md · Cómo se solicita"
+      ]
+    },
+    {
+      "pregunta": "¿En qué caso corresponde el hábeas data?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "historia-clinica.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Si la institución se niega a entregar la historia clínica, el paciente puede iniciar una acción judicial denominada hábeas data. [historia-clinica.md · Si la institución no la entrega]",
+      "fuentes": [
+        "historia-clinica.md · Si la institución no la entrega",
+        "derecho-a-la-informacion.md · Información por escrito",
+        "confidencialidad.md · Reserva de la información",
+        "confidencialidad.md · Cuándo puede divulgarse",
+        "derecho-a-la-informacion.md · Derecho a no ser informado"
+      ]
+    },
+    {
+      "pregunta": "¿Se realiza ortopantomografía?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "odontologia-especialidades.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Sí, el servicio de diagnóstico por imágenes realiza tomografía y ortopantomografía. [odontologia-especialidades.md · Diagnóstico por imágenes]",
+      "fuentes": [
+        "odontologia-especialidades.md · Diagnóstico por imágenes",
+        "odontologia-admision-turnos.md · Resultados de estudios",
+        "odontologia-atencion-general.md · Cómo obtener un turno",
+        "odontologia-admision-turnos.md · Documentación obligatoria",
+        "odontologia-especialidades.md · Especialidades clínicas"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo se aplica la autonomía progresiva?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "derechos-atencion-y-trato.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Los niños, niñas y adolescentes participan de las decisiones sobre su salud conforme al principio de autonomía progresiva, según su grado de madurez y desarrollo. [derechos-atencion-y-trato.md · Autonomía progresiva]",
+      "fuentes": [
+        "derechos-atencion-y-trato.md · Autonomía progresiva",
+        "directivas-anticipadas.md · Directivas anticipadas",
+        "directivas-anticipadas.md · Rechazo de tratamientos en enfermedad terminal",
+        "directivas-anticipadas.md · Cuidados paliativos"
+      ]
+    },
+    {
+      "pregunta": "¿Hay servicio de fisura labio-alvéolo palatina?",
+      "respondible": true,
+      "se_abstuvo": false,
+      "cito_fuente": true,
+      "consulto_modelo": true,
+      "documento_esperado": "odontologia-especialidades.md",
+      "recupero_esperado": true,
+      "acerto_el_dato": true,
+      "correcto": true,
+      "respuesta": "Sí, funciona el **Servicio de Fisura Labio-alvéolo Palatina**. [odontologia-especialidades.md · Servicios especializados]",
+      "fuentes": [
+        "odontologia-especialidades.md · Servicios especializados",
+        "odontologia-atencion-general.md · Equipo profesional",
+        "odontologia-atencion-general.md · Urgencias",
+        "odontologia-admision-turnos.md · Aranceles",
+        "odontologia-especialidades.md · Diagnóstico por imágenes"
+      ]
+    }
+  ]
+}

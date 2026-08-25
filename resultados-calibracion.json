@@ -1,0 +1,227 @@
+{
+  "modo": "vectorial",
+  "umbral_configurado": 0.015,
+  "respondibles": {
+    "n": 31,
+    "min": 0.66040206,
+    "max": 0.82748616
+  },
+  "no_respondibles": {
+    "n": 11,
+    "min": 0.6111431,
+    "max": 0.774852
+  },
+  "separacion_limpia": false,
+  "detalle": [
+    {
+      "pregunta": "¿Cuántas horas de ayuno necesita un adulto para una extracción de sangre?",
+      "respondible": true,
+      "puntaje_top": 0.7682035
+    },
+    {
+      "pregunta": "¿Cuánto ayuno se le pide a un lactante?",
+      "respondible": true,
+      "puntaje_top": 0.70987904
+    },
+    {
+      "pregunta": "¿Qué documentación tengo que llevar para hacerme un análisis de sangre?",
+      "respondible": true,
+      "puntaje_top": 0.69663984
+    },
+    {
+      "pregunta": "¿Para qué estudios hace falta sacar turno previo en el laboratorio?",
+      "respondible": true,
+      "puntaje_top": 0.7883915
+    },
+    {
+      "pregunta": "¿En qué horario se reciben las muestras que uno lleva de la casa?",
+      "respondible": true,
+      "puntaje_top": 0.77821946
+    },
+    {
+      "pregunta": "¿Qué pasa en la primera consulta odontológica?",
+      "respondible": true,
+      "puntaje_top": 0.7807521
+    },
+    {
+      "pregunta": "¿Puedo presentar el DNI digital en lugar del físico?",
+      "respondible": true,
+      "puntaje_top": 0.7098872
+    },
+    {
+      "pregunta": "¿Qué estudios de diagnóstico por imágenes se realizan?",
+      "respondible": true,
+      "puntaje_top": 0.7386958
+    },
+    {
+      "pregunta": "¿En qué días y horarios atiende el servicio de odontología?",
+      "respondible": true,
+      "puntaje_top": 0.8245282
+    },
+    {
+      "pregunta": "¿Se atienden urgencias odontológicas?",
+      "respondible": true,
+      "puntaje_top": 0.82748616
+    },
+    {
+      "pregunta": "¿Cuánto cuesta una extracción de sangre?",
+      "respondible": false,
+      "puntaje_top": 0.7351327
+    },
+    {
+      "pregunta": "¿Qué obras sociales tienen convenio con la institución?",
+      "respondible": false,
+      "puntaje_top": 0.6162081
+    },
+    {
+      "pregunta": "¿Cuántos días tardan en estar listos los resultados del laboratorio?",
+      "respondible": false,
+      "puntaje_top": 0.70103574
+    },
+    {
+      "pregunta": "¿Cuál es el arancel de un tratamiento de ortodoncia?",
+      "respondible": false,
+      "puntaje_top": 0.73218316
+    },
+    {
+      "pregunta": "¿Hay estacionamiento disponible para los pacientes?",
+      "respondible": false,
+      "puntaje_top": 0.67569053
+    },
+    {
+      "pregunta": "¿Con cuánta anticipación hay que pedir el turno de endodoncia?",
+      "respondible": false,
+      "puntaje_top": 0.7440371
+    },
+    {
+      "pregunta": "Tengo un dolor de muelas muy fuerte, ¿qué analgésico me conviene tomar?",
+      "respondible": false,
+      "puntaje_top": 0.6111431
+    },
+    {
+      "pregunta": "Me salió el colesterol alto en el análisis, ¿qué tengo que hacer?",
+      "respondible": false,
+      "puntaje_top": 0.61756045
+    },
+    {
+      "pregunta": "¿En cuánto tiempo tienen que entregarme la historia clínica?",
+      "respondible": true,
+      "puntaje_top": 0.76529247
+    },
+    {
+      "pregunta": "¿Quién más puede retirar mi historia clínica además de mí?",
+      "respondible": true,
+      "puntaje_top": 0.82108206
+    },
+    {
+      "pregunta": "¿Puedo negarme a recibir un tratamiento?",
+      "respondible": true,
+      "puntaje_top": 0.7553605
+    },
+    {
+      "pregunta": "¿Cuándo el consentimiento tiene que darse por escrito?",
+      "respondible": true,
+      "puntaje_top": 0.8036363
+    },
+    {
+      "pregunta": "¿Pueden difundir mi historia clínica sin que yo autorice?",
+      "respondible": true,
+      "puntaje_top": 0.7601668
+    },
+    {
+      "pregunta": "¿Qué obligaciones tiene el paciente dentro del establecimiento?",
+      "respondible": true,
+      "puntaje_top": 0.80749726
+    },
+    {
+      "pregunta": "¿Puedo pedir una segunda opinión sobre mi diagnóstico?",
+      "respondible": true,
+      "puntaje_top": 0.74309987
+    },
+    {
+      "pregunta": "¿Hay que pagar las vacunas del calendario nacional?",
+      "respondible": true,
+      "puntaje_top": 0.7596995
+    },
+    {
+      "pregunta": "¿Necesito orden médica para vacunarme?",
+      "respondible": true,
+      "puntaje_top": 0.7619636
+    },
+    {
+      "pregunta": "¿Qué hago si perdí el carnet de vacunación?",
+      "respondible": true,
+      "puntaje_top": 0.778081
+    },
+    {
+      "pregunta": "¿Me pueden descontar del sueldo el día que voy a vacunarme?",
+      "respondible": true,
+      "puntaje_top": 0.7770094
+    },
+    {
+      "pregunta": "¿Qué vacunas me corresponden si tengo 40 años?",
+      "respondible": false,
+      "puntaje_top": 0.6620616
+    },
+    {
+      "pregunta": "¿Cuánto cuesta pedir una copia de la historia clínica?",
+      "respondible": false,
+      "puntaje_top": 0.774852
+    },
+    {
+      "pregunta": "¿En qué idiomas está disponible el formulario de consentimiento?",
+      "respondible": false,
+      "puntaje_top": 0.6991529
+    },
+    {
+      "pregunta": "¿Puedo pedir que me den la información sobre mi salud por escrito?",
+      "respondible": true,
+      "puntaje_top": 0.7911826
+    },
+    {
+      "pregunta": "¿Puedo dejar asentado por anticipado qué tratamientos rechazo?",
+      "respondible": true,
+      "puntaje_top": 0.68525714
+    },
+    {
+      "pregunta": "¿Cuántas horas antes tiene que dejar de comer un adulto?",
+      "respondible": true,
+      "puntaje_top": 0.6728377
+    },
+    {
+      "pregunta": "¿Puedo pedir que otro profesional revise mi caso?",
+      "respondible": true,
+      "puntaje_top": 0.6813536
+    },
+    {
+      "pregunta": "¿Qué pasa si prefiero no enterarme de mi diagnóstico?",
+      "respondible": true,
+      "puntaje_top": 0.66040206
+    },
+    {
+      "pregunta": "¿Cuánto tardan en darme una copia de mis registros médicos?",
+      "respondible": true,
+      "puntaje_top": 0.7157671
+    },
+    {
+      "pregunta": "¿En qué caso corresponde el hábeas data?",
+      "respondible": true,
+      "puntaje_top": 0.6942626
+    },
+    {
+      "pregunta": "¿Se realiza ortopantomografía?",
+      "respondible": true,
+      "puntaje_top": 0.7781202
+    },
+    {
+      "pregunta": "¿Cómo se aplica la autonomía progresiva?",
+      "respondible": true,
+      "puntaje_top": 0.70193976
+    },
+    {
+      "pregunta": "¿Hay servicio de fisura labio-alvéolo palatina?",
+      "respondible": true,
+      "puntaje_top": 0.6758879
+    }
+  ]
+}
