@@ -1,5 +1,13 @@
 # Asistente de consulta sobre documentación institucional de salud
 
+> **English summary.** Question-answering system over healthcare documentation,
+> built on Azure OpenAI and Azure AI Search (Python). Every answer cites the source
+> document and section; when the docs don't have the answer, it abstains instead
+> of guessing. Evaluated on 42 questions (11 unanswerable on purpose): 31/31
+> correct answers with citations, 11/11 correct abstentions. Pure vector search
+> beat hybrid search on this corpus, so that's what it uses.
+> The rest of this README is in Spanish.
+
 Un sistema que responde preguntas sobre la documentación de un centro de salud
 —turnos, requisitos de admisión, preparación para estudios, derechos del
 paciente— y **cita de qué documento sacó cada respuesta**.
@@ -228,10 +236,20 @@ Declaradas acá para que no haya que buscarlas.
 
 ## Uso
 
-```bash
-python -m venv .venv && .venv\Scripts\activate
+Windows (PowerShell):
+
+```powershell
+python -m venv .venv; .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 copy .env.example .env        # completar con los valores del portal de Azure
+```
+
+Linux / macOS:
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env          # completar con los valores del portal de Azure
 ```
 
 ```bash
