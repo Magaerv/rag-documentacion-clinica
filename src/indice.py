@@ -1,10 +1,7 @@
-"""Creación del índice en Azure AI Search y carga de los fragmentos.
+"""Crea el índice en Azure AI Search y carga los fragmentos.
 
-El índice guarda a la vez el texto y su vector. Eso habilita búsqueda
-híbrida: recuperación vectorial por significado más BM25 por palabra exacta.
-La decisión está justificada en DECISIONES.md — en documentación clínica hay
-términos que no toleran aproximación, y la búsqueda puramente vectorial los
-confunde con sus vecinos semánticos.
+El índice guarda texto y vector, así que admite búsqueda vectorial, textual e
+híbrida. Por defecto se usa la vectorial (ver comparar.py).
 """
 
 from __future__ import annotations
@@ -35,14 +32,8 @@ from ingesta import Fragmento, leer_corpus  # noqa: E402
 def cliente_openai(cfg: Config):
     """Cliente de Azure OpenAI.
 
-    Por defecto usa la **API v1**, donde `api-version` ya no es un parámetro:
-    el recurso expone las rutas bajo `/openai/v1/` y el SDK estándar de OpenAI
-    habla con él directamente. Fijar una versión con fecha obliga a revisarla
-    cada vez que sale un modelo nuevo, y era la causa más común de que un
-    despliegue reciente devolviera "modelo no encontrado".
-
-    Si algún modelo llegara a exigir una versión concreta, se define
-    AZURE_OPENAI_API_VERSION y el cliente vuelve al modo con fecha.
+    Usa la API v1 por defecto. Si AZURE_OPENAI_API_VERSION está definida,
+    usa esa versión.
     """
     if cfg.openai_api_version:
         return AzureOpenAI(
@@ -56,7 +47,7 @@ def cliente_openai(cfg: Config):
 
 
 def vectorizar(cliente: AzureOpenAI, cfg: Config, textos: list[str]) -> list[list[float]]:
-    """Genera embeddings en lotes. La API acepta varios textos por llamada."""
+    """Genera embeddings en lotes."""
     vectores: list[list[float]] = []
     LOTE = 64
     for i in range(0, len(textos), LOTE):
@@ -100,9 +91,7 @@ def cargar(cfg: Config, fragmentos: list[Fragmento]) -> None:
     oai = cliente_openai(cfg)
     print(f"Generando embeddings de {len(fragmentos)} fragmentos...")
 
-    # Se indexa el texto con su procedencia incorporada, no el texto pelado.
-    # Ver Fragmento.texto_indexado: sin el encabezado, un fragmento corto
-    # pierde el tema del que habla y se vuelve irrecuperable.
+    # Se indexa el texto con el encabezado [documento · sección].
     textos = [f.texto_indexado() for f in fragmentos]
     vectores = vectorizar(oai, cfg, textos)
 
@@ -129,18 +118,19 @@ def cargar(cfg: Config, fragmentos: list[Fragmento]) -> None:
 
 
 def _eliminar_huerfanos(cliente: SearchClient, ids_vigentes: set[str]) -> None:
-    """Borra del índice los fragmentos que ya no existen en el corpus.
-
-    Subir documentos actualiza los que coinciden por id y agrega los nuevos,
-    pero no elimina nada. Sin esta reconciliación, editar o borrar un documento
-    del corpus deja sus fragmentos viejos indexados para siempre, y el sistema
-    podría recuperarlos y citarlos como documentación vigente.
-
-    En un sistema cuya garantía es que toda respuesta sea rastreable al corpus,
-    un fragmento huérfano no es basura acumulada: es una cita falsa esperando
-    que alguien haga la pregunta correcta.
+    """Borra del índice los fragmentos que ya no están en el corpus,
+    para que no se citen documentos editados o eliminados.
     """
-    en_indice = {doc["id"] for doc in cliente.search(search_text="*", select=["id"])}
+    # Sin `top`, la búsqueda devuelve solo 50 resultados.
+    LIMITE = 1000
+    en_indice = {
+        doc["id"] for doc in cliente.search(search_text="*", select=["id"], top=LIMITE)
+    }
+    if len(en_indice) >= LIMITE:
+        print(
+            f"Aviso: el índice tiene {LIMITE} o más fragmentos; la búsqueda de "
+            "huérfanos puede estar incompleta. Hace falta paginar."
+        )
     huerfanos = en_indice - ids_vigentes
 
     if not huerfanos:
