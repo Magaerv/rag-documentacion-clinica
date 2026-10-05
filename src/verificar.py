@@ -1,8 +1,4 @@
-"""Comprueba que las credenciales y los despliegues estén bien configurados.
-
-Se ejecuta antes de indexar nada. Cada verificación falla con un mensaje que
-dice qué revisar, en vez de dejar que el error aparezca a mitad de la carga.
-"""
+"""Comprueba credenciales, despliegues e índice antes de indexar."""
 
 from __future__ import annotations
 

@@ -1,15 +1,11 @@
-"""Compara los tres modos de recuperación sobre el mismo conjunto de evaluación.
+"""Compara los modos de recuperación (híbrida, vectorial, texto) sobre el
+mismo conjunto de evaluación.
 
-El README afirma que la búsqueda híbrida es mejor que la vectorial pura para
-este dominio. Este script existe para que esa afirmación deje de ser una
-hipótesis razonable y pase a ser un resultado medido — o para desmentirla,
-que también es un resultado publicable.
+Resultado: vectorial 31/31, híbrida 30/31, texto 29/31. Por eso el sistema
+usa la vectorial por defecto.
 
-El umbral de relevancia se desactiva en los tres modos. Los puntajes no son
-comparables entre sí (fusión de rankings, similitud coseno y BM25 viven en
-escalas distintas), así que un umbral fijo penalizaría a unos modos y no a
-otros, y el experimento terminaría midiendo el umbral en vez de la
-recuperación.
+El umbral de relevancia se desactiva porque los puntajes de cada modo están en
+escalas distintas y no son comparables.
 """
 
 from __future__ import annotations
@@ -61,8 +57,7 @@ def main() -> None:
         fila = "".join(f"{resultados[m]['resumen'][clave]:>13.1f}%" for m in MODOS)
         print(f"{descripcion:<{ancho}}{fila}")
 
-    # Desglose por grupo. El promedio general esconde justamente lo que el
-    # experimento quiere ver: si cada mecanismo falla donde se espera que falle.
+    # Desglose por grupo de preguntas.
     grupos = {}
     for caso in casos:
         grupos.setdefault(caso.get("grupo", "general"), []).append(caso["pregunta"])
@@ -89,8 +84,7 @@ def main() -> None:
                 fila += f"{pct:>13.1f}%"
             print(f"{etiqueta_grupo.get(grupo, grupo):<{ancho_g}}{fila}")
 
-    # Los casos donde los modos difieren son lo más informativo del experimento:
-    # muestran qué recupera uno que el otro no, en vez de un promedio.
+    # Casos donde los modos dan resultados distintos.
     print("\nCasos con resultado distinto entre modos:\n")
     detalle = {m: {f["pregunta"]: f for f in resultados[m]["detalle"]} for m in MODOS}
     hubo = False

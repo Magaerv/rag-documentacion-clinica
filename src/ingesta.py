@@ -1,9 +1,4 @@
-"""Lectura del corpus y segmentación en fragmentos con metadatos de origen.
-
-La cita de fuente es el requisito central del sistema, y una cita solo es
-verificable si el fragmento sabe de dónde salió. Por eso la segmentación no
-devuelve texto suelto: devuelve texto más documento, sección y posición.
-"""
+"""Lee el corpus y lo parte en fragmentos con documento, sección y posición."""
 
 from __future__ import annotations
 
@@ -25,20 +20,10 @@ class Fragmento:
         return asdict(self)
 
     def texto_indexado(self) -> str:
-        """Texto con su procedencia incorporada, tal como se indexa.
+        """Texto con el encabezado [documento · sección], tal como se indexa.
 
-        Al partir un documento, cada fragmento pierde el contexto de dónde
-        venía. El caso que lo reveló: la sección "Plazo de entrega" de la
-        historia clínica dice "la copia debe entregarse dentro de las 48
-        horas" y no menciona en ningún lado de qué copia habla. Para el
-        buscador era una frase suelta sobre plazos, y ante la pregunta
-        "¿en cuánto tiempo me entregan la historia clínica?" perdía contra
-        secciones que repetían "historia clínica" sin tener el dato.
-
-        Anteponer el encabezado le devuelve al fragmento el tema del que
-        habla, tanto para la búsqueda por significado como para la búsqueda
-        por término exacto. Y como usa el mismo formato que se le pide al
-        modelo para citar, la cita queda a la vista del propio modelo.
+        Sin el encabezado, fragmentos cortos pierden el tema (p. ej. "la copia
+        debe entregarse dentro de las 48 horas") y no se recuperan bien.
         """
         return f"[{self.documento} · {self.seccion}]\n\n{self.texto}"
 
@@ -48,11 +33,7 @@ _ENCABEZADO = re.compile(r"^\s{0,3}(#{1,6})\s+(.*\S)\s*$|^([A-ZÁÉÍÓÚÑ][A-Z
 
 
 def _identificador(documento: str, orden: int, texto: str) -> str:
-    """Id estable: mismo contenido en la misma posición produce el mismo id.
-
-    Permite reindexar sin duplicar. Azure AI Search solo admite letras,
-    números, guiones, guiones bajos y signos igual en la clave.
-    """
+    """Id estable para poder reindexar sin duplicar."""
     firma = hashlib.sha1(f"{documento}:{orden}:{texto}".encode("utf-8")).hexdigest()
     return f"{firma[:24]}"
 
@@ -80,13 +61,7 @@ def _secciones(texto: str) -> list[tuple[str, str]]:
 
 
 def _partir(texto: str, tamano: int, solapamiento: int) -> list[str]:
-    """Segmenta respetando límites de párrafo cuando es posible.
-
-    Cortar a la mitad de una frase produce fragmentos que el modelo cita mal,
-    porque le falta el sujeto o la condición. Se acumulan párrafos hasta
-    alcanzar el tamaño objetivo, y solo se parte un párrafo si por sí solo
-    ya excede ese tamaño.
-    """
+    """Agrupa párrafos hasta el tamaño objetivo; solo corta párrafos muy largos."""
     parrafos = [p.strip() for p in re.split(r"\n\s*\n", texto) if p.strip()]
     fragmentos: list[str] = []
     actual = ""
@@ -118,9 +93,7 @@ def leer_corpus(directorio: Path, tamano: int, solapamiento: int) -> list[Fragme
     if not directorio.exists():
         raise FileNotFoundError(f"No existe el directorio de corpus: {directorio}")
 
-    # README.md queda fuera a propósito: documenta el origen del corpus, no
-    # forma parte de él. Indexarlo haría que el sistema pudiera citar sus
-    # propias notas internas como si fueran documentación institucional.
+    # README.md documenta el corpus, no se indexa.
     archivos = sorted(
         p
         for p in directorio.rglob("*")

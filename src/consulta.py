@@ -1,9 +1,4 @@
-"""Recuperación y generación con grounding.
-
-El criterio de aceptación de este sistema no es que responda: es que no
-infiera lo que no está en el corpus y que cite la fuente de cada respuesta.
-Todo lo de abajo está ordenado alrededor de eso.
-"""
+"""Recuperación y generación con cita de fuente y abstención."""
 
 from __future__ import annotations
 
@@ -22,15 +17,9 @@ from indice import cliente_openai  # noqa: E402
 
 SIN_INFORMACION = "No tengo esa información en la documentación disponible."
 
-# Detectar abstención por coincidencia exacta con la frase canónica resultó
-# demasiado rígido. Cuando el corpus contiene algo relacionado pero no el dato
-# pedido, el modelo produce una negativa más útil —"la documentación indica que
-# la atención es arancelada, pero no especifica el arancel de ortodoncia"— que
-# es la conducta correcta y que la coincidencia exacta contaba como invento.
-#
-# Estos marcadores reconocen la familia de negativas. El criterio sigue siendo
-# el mismo: lo que importa es que el sistema declare la ausencia del dato, no
-# la fórmula exacta con la que lo declare.
+# Frases que indican que el modelo no encontró el dato. No alcanza con la
+# frase exacta: a veces responde "no especifica el arancel de ...", que también
+# es una abstención válida.
 MARCADORES_ABSTENCION = (
     "no tengo esa información",
     "no especifica",
@@ -45,12 +34,7 @@ MARCADORES_ABSTENCION = (
 
 
 def _normalizar(texto: str) -> str:
-    """Minúsculas y sin tildes.
-
-    La detección no debe depender de la acentuación: el modelo puede escribir
-    "informacion" sin tilde y la negativa seguiría siendo una negativa. Hacer
-    depender una métrica de un acento es construirla sobre arena.
-    """
+    """Minúsculas y sin tildes."""
     descompuesto = unicodedata.normalize("NFD", texto.lower())
     return "".join(c for c in descompuesto if unicodedata.category(c) != "Mn")
 
@@ -102,13 +86,7 @@ class Respuesta:
 
 
 def completar(cliente, despliegue: str, mensajes: list[dict]) -> str:
-    """Invoca el modelo de chat pidiendo la salida más determinística posible.
-
-    `temperature=0` es lo que queremos: ante los mismos fragmentos, la misma
-    respuesta. Pero varias familias de modelos recientes solo admiten el valor
-    por defecto y rechazan el parámetro. En ese caso se reintenta sin él, en
-    lugar de fallar: la determinación exacta es deseable, no indispensable.
-    """
+    """Llama al modelo con temperature=0; si el modelo no lo admite, reintenta sin él."""
     try:
         r = cliente.chat.completions.create(
             model=despliegue, temperature=0, messages=mensajes
@@ -125,28 +103,10 @@ MODOS = ("hibrida", "vectorial", "texto")
 
 
 def recuperar(cfg: Config, pregunta: str, modo: str = "vectorial") -> list[Fuente]:
-    """Recupera los fragmentos más relevantes para la pregunta.
+    """Recupera los fragmentos más relevantes.
 
-    Tres modos, para poder comparar qué aporta cada mecanismo:
-
-    - `vectorial`: solo búsqueda por significado. Encuentra el fragmento
-      aunque la pregunta use otras palabras, pero confunde términos que son
-      vecinos semánticos entre sí.
-    - `texto`: solo búsqueda por término (BM25). Encuentra la palabra exacta
-      y pondera las infrecuentes, pero falla si la pregunta está formulada
-      con otro vocabulario.
-    - `hibrida`: las dos combinadas.
-
-    El modo por defecto es `vectorial`, y no por costumbre: se midieron los
-    tres sobre el mismo conjunto de evaluación y la búsqueda por significado
-    acertó 31 de 31, la híbrida 30 y la textual 29. Combinar los mecanismos
-    no mejoró nada y en un caso perjudicó — la coincidencia literal trajo un
-    fragmento de un documento sin relación y, al fusionar los rankings,
-    desplazó fuera del top al fragmento correcto. Ver comparar.py.
-
-    Los puntajes NO son comparables entre modos: la híbrida los combina por
-    fusión de rankings, la vectorial devuelve similitud y la textual, puntaje
-    BM25. Por eso el umbral de relevancia solo tiene sentido dentro de un modo.
+    Modos: `vectorial` (por defecto, el mejor en comparar.py), `texto` (BM25)
+    e `hibrida`. Los puntajes no son comparables entre modos.
     """
     if modo not in MODOS:
         raise ValueError(f"modo debe ser uno de {MODOS}, no {modo!r}")
@@ -182,12 +142,9 @@ def recuperar(cfg: Config, pregunta: str, modo: str = "vectorial") -> list[Fuent
 
 def responder(cfg: Config, pregunta: str, modo: str = "vectorial",
               aplicar_umbral: bool = True) -> Respuesta:
-    """Responde la pregunta con los fragmentos recuperados.
+    """Responde con los fragmentos recuperados.
 
-    `aplicar_umbral` se desactiva al comparar modos de recuperación: los
-    puntajes no son comparables entre sí, de modo que un umbral fijo
-    penalizaría a unos modos y no a otros, y el experimento mediría el
-    umbral en vez de la recuperación.
+    `aplicar_umbral=False` se usa al comparar modos (comparar.py).
     """
     fuentes = recuperar(cfg, pregunta, modo)
     relevantes = (
@@ -196,8 +153,7 @@ def responder(cfg: Config, pregunta: str, modo: str = "vectorial",
         else fuentes
     )
 
-    # Abstención temprana: si nada supera el umbral, no se invoca el modelo.
-    # Ahorra el costo y, sobre todo, elimina la oportunidad de inventar.
+    # Si nada supera el umbral, se abstiene sin llamar al modelo.
     if not relevantes:
         return Respuesta(
             pregunta=pregunta,
@@ -207,9 +163,7 @@ def responder(cfg: Config, pregunta: str, modo: str = "vectorial",
             consulto_modelo=False,
         )
 
-    # El texto recuperado ya trae su encabezado [documento · sección]
-    # incorporado desde la indexación, en el mismo formato que el prompt
-    # le pide al modelo para citar.
+    # Cada fragmento ya incluye su encabezado [documento · sección].
     contexto = "\n\n---\n\n".join(f.texto for f in relevantes)
 
     oai = cliente_openai(cfg)

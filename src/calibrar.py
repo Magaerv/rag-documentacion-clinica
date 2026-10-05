@@ -1,13 +1,7 @@
-"""Mide si existe un umbral de relevancia que separe lo respondible de lo que no.
+"""Mide los puntajes de recuperación para elegir el umbral de relevancia.
 
-El sistema tiene una capa de abstención temprana: si ningún fragmento supera
-cierto puntaje, responde que no sabe sin llegar a invocar el modelo. Esa capa
-solo sirve si existe un valor que deje pasar las preguntas que el corpus puede
-responder y frene las que no.
-
-Este script no asume que ese valor exista. Recupera sin umbral, guarda el
-puntaje del mejor fragmento de cada pregunta, y compara las dos poblaciones.
-Si se superponen, no hay umbral posible — y eso es un resultado, no un fracaso.
+Compara el puntaje del mejor fragmento en preguntas respondibles y no
+respondibles, y muestra qué pasaría con cada umbral candidato.
 """
 
 from __future__ import annotations
@@ -64,8 +58,7 @@ def main() -> None:
     describir("Respondibles", resp)
     describir("No respondibles", nores)
 
-    # La pregunta central: ¿el peor caso respondible puntúa más alto que el
-    # mejor caso no respondible? Si sí, hay un umbral limpio en el medio.
+    # Hay separación limpia si el peor respondible supera al mejor no respondible.
     print()
     if min(resp) > max(nores):
         umbral = (min(resp) + max(nores)) / 2
@@ -77,7 +70,7 @@ def main() -> None:
         print(f"  respuesta puntúan por encima de la peor pregunta respondible.")
         print("  Ningún umbral las separa sin perder respuestas legítimas.")
 
-    # Barrido: qué cuesta y qué gana cada umbral candidato.
+    # Efecto de cada umbral candidato.
     print("\nQué pasaría con cada umbral candidato:\n")
     print("  umbral     abstiene bien   pierde respondibles")
     candidatos = sorted({round(p, 3) for p in nores + resp})

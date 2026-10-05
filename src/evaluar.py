@@ -1,8 +1,6 @@
-"""Evaluación del sistema contra un conjunto de preguntas conocidas.
+"""Evalúa el sistema contra el conjunto de preguntas de evaluacion/preguntas.yaml.
 
-La métrica que importa no es cuántas preguntas responde: es cuántas de las
-que NO tienen respuesta en el corpus contesta igual. Un RAG que responde
-todo es un RAG que inventa, y eso no se ve mirando las respuestas correctas.
+Incluye preguntas sin respuesta en el corpus para medir si el sistema se abstiene.
 """
 
 from __future__ import annotations
@@ -36,14 +34,7 @@ def evaluar(cfg: Config, casos: list[dict], modo: str = "vectorial",
         documentos = {f.documento for f in r.fuentes}
         recupero_esperado = documento_esperado in documentos if documento_esperado else None
 
-        # ¿La respuesta contiene el dato que se esperaba?
-        #
-        # Sin esta comprobación, la métrica premiaba responder y citar, no
-        # acertar. Un modo de recuperación llegó a contestar sobre turnos de
-        # odontología ante una pregunta sobre segunda opinión médica, citando
-        # una fuente real, y la evaluación lo contó como correcto. Citar bien
-        # una respuesta equivocada es peor que abstenerse, porque la cita le
-        # presta credibilidad al error.
+        # Verifica que la respuesta contenga el dato esperado, no solo que cite.
         esperado = caso.get("respuesta_contiene") or []
         normalizada = _normalizar(r.texto)
         acerto = (
@@ -53,12 +44,10 @@ def evaluar(cfg: Config, casos: list[dict], modo: str = "vectorial",
         )
 
         if respondible:
-            # Correcto = respondió, citó la fuente y dijo el dato correcto.
-            # Abstenerse ante algo documentado es un falso negativo, tan
-            # defecto como inventar.
+            # Correcto: respondió, citó y acertó el dato.
             ok = (not r.se_abstuvo) and cito and (acerto is not False)
         else:
-            # Correcto = se abstuvo. Es el caso que mide si el sistema inventa.
+            # Correcto: se abstuvo.
             ok = r.se_abstuvo
 
         filas.append(
